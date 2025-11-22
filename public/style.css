@@ -1,0 +1,105 @@
+/* public/style.css
+   Clean, modern and responsive styling (Pink theme).
+   - Uses Poppins (loaded in server HTML)
+   - Centered content, responsive card
+   - Subtle hover and focus effects for interactivity
+   - Theme colors changed to pink palette
+*/
+
+:root{
+  --bg: #fff5f9; /* pale pink background */
+  --card: #ffffff;
+  --accent: #ec4899; /* pink (rose-500) */
+  --muted: #6b7280;
+  --shadow: 0 8px 24px rgba(16,24,40,0.06);
+  --radius: 14px;
+  --glass: rgba(255,255,255,0.6);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
+body {
+  background: linear-gradient(180deg, var(--bg), #fff0f6 100%);
+  font-family: 'Poppins', Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+/* Main container centers content and keeps it responsive */
+.container {
+  width: 100%;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card displaying the required info */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 36px;
+  width: 100%;
+  box-shadow: var(--shadow);
+  transition: transform 220ms cubic-bezier(.22,.98,.48,1), box-shadow 220ms;
+  text-align: center;
+  cursor: default;
+}
+
+.card:hover, .card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(236,72,153,0.12); /* pink-tinged shadow on hover */
+}
+
+/* Name and section */
+.name {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 600;
+  color: #0b1220;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.section {
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin-bottom: 18px;
+}
+
+/* Quote styling */
+.quote {
+  margin: 18px auto;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #111827;
+  border-left: 4px solid var(--accent);
+  padding: 12px 16px;
+  background: linear-gradient(180deg, rgba(236,72,153,0.03), rgba(236,72,153,0.01));
+  border-radius: 8px;
+  max-width: 720px;
+}
+
+/* Small hint and footer */
+.hint {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .card { padding: 24px; border-radius: 12px; }
+  .quote { font-size: 1rem; padding: 10px 12px; }
+}
